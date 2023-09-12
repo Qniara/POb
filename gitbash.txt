@@ -1,1 +1,5 @@
 $ git clone (link) - klonowanie repozytorium z gita
+git push - wysłanie na serwer
+clear - czyszczenie interfejsu
+touch (nazwa pliku) - tworzenie pliku w repozytorium
+echo "nowy plik na serwerze" >(nazwa pliku) - tworzenie pliku na serwerze 
