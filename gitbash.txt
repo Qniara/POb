@@ -1,0 +1,1 @@
+$ git clone (link) - klonowanie repozytorium z gita
