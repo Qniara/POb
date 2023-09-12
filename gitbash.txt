@@ -7,3 +7,5 @@ cat (nazwa plik) - ostatni commit związany z typ plikiem
 git add * - dodaj wszystko na gita
 git commit -m "komentarz" - commit z komentarzem
 git status - status gita
+git config --global user.email "email" - ustawienie emaila wyjsciowego 
+git config --global user.name "name" - ustawienie tego tam
