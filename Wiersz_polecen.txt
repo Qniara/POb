@@ -1,4 +1,3 @@
-5.09.2023
 Sprawdzanie wersji dotneta w cmd - "dotnet --version"
 Sprawdzanie informacji na temat dotneta w cmd - "dotnet --info"
 Czyszczenie cmd - "cls"
@@ -12,6 +11,3 @@ Wyświetlenie spisu szablonów - "dotnet new -h"
 PRAWIDŁOWO wyglądające polecenie dodania - "dotnet new console -o 'nazwa'"
 Pokazuje jakie pliki się znajdują w katalogu - "tree /f"
 Cofanie się do poprzedniego katalogu - "cd .. "
-
-12.09.2023
-$ git clone (link) - klonowanie repozytorium z gita
