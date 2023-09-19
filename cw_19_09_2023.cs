@@ -16,6 +16,14 @@ namespace cw_19_09_2023
             //Console.Clear(); -> czyści ekran
             //Console.ReadKey(); -> podanie jaki klawisz ma być kliknięty aby
             //zakończyć wyświetlanie konsoli
+
+            //TYPY DANYCH
+            /*
+             * INT
+             */
+
+            int i; //deklaracja zmiennej
+            int j = 10; //deklaracja z inicjalozacją
         }
     }
 }
