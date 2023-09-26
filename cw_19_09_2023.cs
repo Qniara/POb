@@ -67,6 +67,21 @@ namespace cw_19_09_2023
             //ZAKRES TYPÓW DANYCH
             //Console.WriteLine(byte.MinValue);
             //Console.WriteLine(byte.MaxValue);
+
+            //UNICODE
+            //Console.OutputEncoding = System.Text.Encoding.Unicode;//wyswietli
+            //Console.WriteLine("♀");
+            //Console.OutputEncoding = System.Text.Encoding.Default;//niewyswietli
+            //Console.WriteLine("♀");
+
+            //Console.OutputEncoding = System.Text.Encoding.Unicode;//wyswietli
+            //Console.WriteLine("\x2665");
+            //Console.WriteLine("♥");
+
+            //char letter = 'a';
+            //Console.WriteLine(letter);
+            //char letter2 = 97;
+            //Console.WriteLine(letter2);
         }
     }
 }
