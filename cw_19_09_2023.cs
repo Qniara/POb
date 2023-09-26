@@ -25,7 +25,7 @@ namespace cw_19_09_2023
              * ushort -> wartości od 0 do 65535 (16 bitów = 2 bajty)
              * int -> wartości od -2147483648 do 2147483647 (32 bity = 4 bajty)
              * uint -> (64 bity = 8 bajtów)
-             * long -> (64 bity = 8 bajtów)
+             * long -> wartości od -9223372036854775808 do 9223372036854775807 (64 bity = 8 bajtów)
              * ulong -> wartości od 0 do 18446744073709551615 (64 bity = 8 bajtów)
              * bool -> true / false
              * char -> znaki od U+0000 do U+FFFF (16-bitowy znak z tablicy Unicode)
@@ -49,12 +49,24 @@ namespace cw_19_09_2023
             //int32 b = 10;
             //System.Int32 c = 10;
 
-            long l = 10L;//suffix L
-            ulong ul = 10UL;//suffix UL
+            //long l = 10L;//suffix L
+            //ulong ul = 10UL;//suffix UL
 
-            float f = 10.5F;//suffix F
+            //float f = 10.5F;//suffix F
 
-            Console.ReadKey();
+            //ZAPIS SYSTEMOW LICZBOWYCH
+            //Binarny
+            //Console.WriteLine(0b1011); //11 [10]
+            //Oktalny
+            //Console.WriteLine(011); //11
+            //int io = Convert.ToInt32("12", 8);
+            //Console.WriteLine(io); //2*8^0+1*8^1 = 2+8 = 10 [10]
+            //heksadecymalny
+            //Console.WriteLine(0xA1); //A*16^1+1*16^0 = 10*16+1*1 = 161 [10]
+
+            //ZAKRES TYPÓW DANYCH
+            //Console.WriteLine(byte.MinValue);
+            //Console.WriteLine(byte.MaxValue);
         }
     }
 }
