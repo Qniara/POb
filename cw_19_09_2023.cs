@@ -82,6 +82,47 @@ namespace cw_19_09_2023
             //Console.WriteLine(letter);
             //char letter2 = 97;
             //Console.WriteLine(letter2);
+
+
+            //int x = 1;
+            //int y = 2;
+            //Console.WriteLine("Dupa {0} gowno {1}",x,y);
+
+
+            //nowak
+            //bool f(int n)
+            //{
+            //    for(int i=2;i<n;i++)
+            //    {
+            //        if (n % i == 0)
+            //        {
+            //            return false;
+            //        }
+            //    }
+            //    return true;
+            //}
+            //bool f2(int n)
+            //{
+            //    if(f(n)== true && f(n * 2 + 1) == true)
+            //    {
+            //        return true;
+            //    }
+            //    else return false;
+            //}
+            //int x=int.Parse(Console.ReadLine());
+            //if(f2(x)== true)
+            //{
+            //    Console.WriteLine("Jes");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Niet");
+            //}
+            //for(int i = 2; i < 100; i++)
+            //{
+            //    if (f2(i) == true)
+            //        Console.Write(i + " ");
+            //}
         }
     }
 }
