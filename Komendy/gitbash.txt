@@ -1,0 +1,11 @@
+$ git clone (link) - klonowanie repozytorium z gita
+git push - wysłanie na serwer
+clear - czyszczenie interfejsu
+touch (nazwa pliku) - tworzenie pliku w repozytorium
+echo "nowy plik na serwerze" >(nazwa pliku) - tworzenie pliku na serwerze 
+cat (nazwa plik) - ostatni commit związany z typ plikiem
+git add * - dodaj wszystko na gita
+git commit -m "komentarz" - commit z komentarzem
+git status - status gita
+git config --global user.email "email" - ustawienie emaila wyjsciowego 
+git config --global user.name "name" - ustawienie tego tam
