@@ -39,7 +39,10 @@ namespace cw_17._10._2023
                 }
                 if (IsTriangle(a, b, c))
                 {
-                    Console.WriteLine($"Pole trojkata o bokach {a}, {b} i {c} wynosi: {Pole(a,b,c)}");
+                    isCorrect = true;
+                    Console.OutputEncoding = System.Text.Encoding.Unicode;
+                    Console.WriteLine($"Pole trójkąta o bokach {a}, {b} i {c} wynosi: {Pole(a,b,c)}");
+                    Console.OutputEncoding = System.Text.Encoding.Default;
                 }
                 else
                 {
