@@ -4,15 +4,24 @@ namespace cw_17._10._2023
     {
         static void Main(string[] args)
         {
+            //double a;
+            //Console.WriteLine("Podaj a: ");
+            //if (double.TryParse(Console.ReadLine(), out a))
+            //{
+            //    Console.WriteLine(a);
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Błędne dane");
+            //}
+
+            Console.WriteLine("Podaj a: ");
             double a;
-            if (double.TryParse(Console.ReadLine(), out a))
+            while (!double.TryParse(Console.ReadLine(), out a))
             {
-                Console.WriteLine(a);
+                Console.WriteLine("Wpisz prawidłowe dane.");
             }
-            else
-            {
-                Console.WriteLine("")
-            }
+
         }
     }
 }
