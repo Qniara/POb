@@ -8,20 +8,52 @@ namespace defekacja
 {
     internal class Program
     {
+        static void ErrorColorChange(string command)
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine($"Blad: {command}");
+            Console.ResetColor();
+        }
         static void Main(string[] args)
         {
             //TRY CATCH
-            try
+            bool n = false;
+            while (n = true)
             {
-                Console.WriteLine("Podaj dwie liczby\n");
-                Console.WriteLine("Podaj a: ");
-                double x = double.Parse(Console.ReadLine());
-                Console.WriteLine("Podaj y:");
-                double y = double.Parse(Console.ReadLine());
-                Console.WriteLine($"{x}/{y}={x / y:F3}");
-            }catch(Exception ex)
-            {
-                Console.WriteLine($"Blad: {ex.Message}");
+                try
+                {
+                    Console.WriteLine("Podaj dwie liczby\n");
+                    Console.WriteLine("Podaj a: ");
+                    int x = int.Parse(Console.ReadLine());
+                    Console.WriteLine("Podaj y:");
+                    int y = int.Parse(Console.ReadLine());
+                    //if (y == 0)
+                    //{
+                    //    throw new Exception("Nie mozna dzielić przez 0.");
+                    //}
+                    double result = x / y;
+                    Console.Write($"{x}/{y}=");
+                    Console.ForegroundColor = ConsoleColor.Cyan;
+                    Console.WriteLine($"{result:F3}");
+                    Console.ResetColor();
+                    n = true; break;
+                }
+                catch (DivideByZeroException)
+                {
+                    ErrorColorChange("\nWolno ci dzielic przez zero!!!!!!");
+                }
+                catch (FormatException)
+                {
+                    ErrorColorChange("\nBledny format danych... :( ");
+                }
+                catch (OverflowException)
+                {
+                    ErrorColorChange("Bledny zakres liczby.\nPodana liczba jest bledna.\nWpisana liczba jest niepoprawna.\n");
+                }
+                catch (Exception ex)
+                {
+                    ErrorColorChange($"Blad: {ex.Message}");
+                }
             }
         }
     }
