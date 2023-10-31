@@ -16,31 +16,41 @@ namespace _31_10_2023
             //wyjątek FormatException i poprosić o ponowne wprowadzenie liczby. Program powinien działać w
             //pętli, dopóki użytkownik nie wpisze q.Użyj instrukcji try-catch-finally do obsługi wyjątków.
             double n;
+            string a;
             bool x = false;
             Console.OutputEncoding = System.Text.Encoding.Unicode;
-            while (x == false)
+            while (!x)
             {
                 try
                 {
-                    Console.WriteLine("Podaj liczbę: ");
-                    n = double.Parse(Console.ReadLine());
-                    if (n == 0)
+                    Console.WriteLine("Podaj liczbę lub q jeśli chcesz wyjść: ");
+                    a= Console.ReadLine();
+                    if (a == "q")
                     {
-                        x=true;
+                        Console.WriteLine("Dziękujemy za skorzystanie z programu.");
+                        x =true;
+                        break;
+                    }
+                    n = double.Parse(a);
+                    if (n < 0)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        throw new ArgumentOutOfRangeException("Liczba musi być dodatnia.");
+                        Console.ResetColor();
                     }
                     Console.WriteLine(n * n);
                 }
                 catch (FormatException)
                 {
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Wprowadzono nieprawdiłowe dane.");
-                }
-                catch (ArgumentOutOfRangeException)
-                {
-                    Console.WriteLine("Liczba musi być dodatnia.");
+                    Console.ResetColor();
                 }
                 catch (Exception e)
                 {
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Wykryto błąd: " + e.Message);
+                    Console.ResetColor();
                 }
             }
         }
