@@ -77,23 +77,34 @@ namespace _7_11_2023
             //tablicę liczb całkowitych i zwraca ich sumę. Użyj pętli foreach, aby dodać do sumy każdy element tablicy numbers
             //i zwrócić sumę. Wywołaj metodę CalculateSum(numbers) i przypisz jej wynik do zmiennej sum. Wyświetl na ekranie
             //komunikat, który pokazuje sumę podanych liczb.
-            int GetIntegerFromUser()
-            {
-                int n;
-                Console.Write("Podaj liczbe: ");
-                while (!int.TryParse(Console.ReadLine(), out n))
-                {
-                    Console.WriteLine("Podaj prawidlowa wartosc.");
-                    Console.Write("Podaj liczbe: ");
-                }
-                return n;
-
-            }
-            int[] numbers = new int[5];
-            for(int i = 0; i < numbers.Length; i++)
-            {
-
-            }
+            //int GetIntegerFromUser()
+            //{
+            //    int n;
+            //    Console.Write("Podaj liczbe: ");
+            //    while (!int.TryParse(Console.ReadLine(), out n))
+            //    {
+            //        Console.WriteLine("Podaj prawidlowa wartosc.");
+            //        Console.Write("Podaj liczbe: ");
+            //    }
+            //    return n;
+            //}
+            //int CalculateSum(int[] T)
+            //{
+            //    int sum = 0; ;
+            //    foreach(int t in T)
+            //    {
+            //        sum += t;
+            //    }
+            //    return sum;
+            //}
+            //int[] numbers = new int[5];
+            //int suma = 0;
+            //for(int i = 0; i < numbers.Length; i++)
+            //{
+            //    numbers[i] = GetIntegerFromUser();
+            //}
+            //suma = CalculateSum(numbers);
+            //Console.WriteLine("Suma podanych liczb wynosi: " + suma);
 
             //Napisz program w C#, który wczytuje od użytkownika 5 liczb całkowitych i zapisuje je w tablicy. 
             //Następnie program prosi użytkownika o podanie indeksu tablicy i wyświetla liczbę znajdującą się pod tym indeksem. 
