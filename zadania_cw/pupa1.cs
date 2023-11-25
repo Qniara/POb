@@ -9,17 +9,38 @@ namespace Pob_cw_pupciasne
     internal class Program
     {
         //funkcja statyczna, która pozwala wprowadzić rozmiar tablicy i nazwę - CreateArray()
-        static void CreateArray()
+        public static int[] CreateArray()
         {
+            Console.WriteLine("Podaj nazwe tablicy: ");
+            string name = Console.ReadLine();
+            Console.WriteLine($"Podaj rozmiar tablicy {name}: ");
             int size = int.Parse(Console.ReadLine());
-
+            int[] T = new int[size];
+            return T;
         }
         //funkcja statyczna, która ustawia elementy tablicy SetArray()
-
+        public static void SetArray(int[] T)
+        {
+            for(int i=0;i<T.Length;i++)
+            {
+                Console.WriteLine($"Podaj {i} element tablicy: ");
+                T[i] = int.Parse(Console.ReadLine());
+            }
+        }
         //funkcja statyczna, która wyświetla zawartość tablicy DisplayArray()
+        public static void DisplayArray(int[] T)
+        {
+            for(int i = 0; i < T.Length; i++)
+            {
+                Console.Write(T[i]+ " ");
+            }
+            Console.WriteLine();
+        }
         static void Main(string[] args)
         {
-
+            int[] T= CreateArray();
+            SetArray(T);
+            DisplayArray(T);
             //Napisz program, który pobiera od użytkownika 5 liczb całkowitych i zapisuje je w tablicy.Następnie program
             //wyświetla sumę wszystkich elementów tablicy. W celu zabezpieczenia programu przed niepoprawnymi danymi
             //wejściowymi, użyliśmy metody int.TryParse(), która pozwala na sprawdzenie, czy wprowadzona wartość jest
