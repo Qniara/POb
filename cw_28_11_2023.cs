@@ -66,6 +66,36 @@ namespace ConsoleApp2
             //    }
             //    Console.WriteLine();
             //}
+
+            //------------------------------------------------------------------------------------------------------------------------------------
+
+            //Napisz program w języku C#, który realizuje następujące funkcjonalności:
+            //Program wczytuje z klawiatury liczbę n i tworzy tablicę dwuwymiarową o wymiarach n x n.
+            //Program wypełnia tablicę liczbami losowymi z zakresu od 1 do 100 i wyświetla jej zawartość na ekranie.
+            //Program oblicza i wyświetla sumę elementów na głównej przekątnej tablicy.
+            //Program posiada menu, które umożliwia użytkownikowi wybór jednej z pięciu funkcji statycznych, które realizują poszczególne 
+            //kroki zadania.Menu jest wyświetlane na początku programu i po każdym wykonaniu funkcji.Menu ma następującą postać:
+            //Wybierz funkcję statyczną:
+            //1.WczytajLiczbe
+            //2.UtworzTablice
+            //3.WypelnijTablice
+            //4.WyswietlTablice
+            //5.ObliczSume
+            //Funkcja WczytajLiczbe wczytuje liczbę z klawiatury i zwraca ją jako wartość typu int.Funkcja sprawdza, czy podana wartość
+            //jest poprawną liczbą dodatnią i w razie błędu wyświetla komunikat i prosi o ponowne wprowadzenie danych.Funkcja umożliwia
+            //również zakończenie programu przez wpisanie litery q.
+            //Funkcja UtworzTablice tworzy tablicę dwuwymiarową o podanych wymiarach i zwraca ją jako wartość typu int[,]. Funkcja
+            //wczytuje liczbę wierszy i kolumn tablicy za pomocą funkcji WczytajLiczbe i wyświetla informację o utworzeniu tablicy.
+            //Funkcja WypelnijTablice wypełnia tablicę liczbami losowymi z podanego zakresu i zwraca ją jako wartość typu int[,].
+            //Funkcja wczytuje dolną i górną granicę zakresu liczb losowych za pomocą funkcji WczytajLiczbe i sprawdza, czy użytkownik
+            //ma już utworzoną tablicę. Jeśli nie, funkcja prosi go o utworzenie tablicy za pomocą funkcji UtworzTablice.Funkcja
+            //wyświetla informację o wypełnieniu tablicy.
+            //Funkcja WyswietlTablice wyświetla zawartość tablicy na ekranie i nie zwraca niczego(void).Funkcja sprawdza, czy
+            //użytkownik ma już utworzoną i wypełnioną tablicę. Jeśli nie, funkcja prosi go o utworzenie i wypełnienie tablicy za
+            //pomocą funkcji UtworzTablice i WypelnijTablice.
+            //Funkcja ObliczSume oblicza sumę elementów na głównej przekątnej tablicy i zwraca ją jako wartość typu int.Funkcja
+            //sprawdza, czy użytkownik ma już utworzoną i wypełnioną tablicę. Jeśli nie, funkcja prosi go o utworzenie i wypełnienie
+            //tablicy za pomocą funkcji UtworzTablice i WypelnijTablice.Funkcja wyświetla wartość sumy na ekranie.
         }
     }
 }
