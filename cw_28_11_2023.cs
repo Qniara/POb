@@ -96,6 +96,123 @@ namespace ConsoleApp2
             //Funkcja ObliczSume oblicza sumę elementów na głównej przekątnej tablicy i zwraca ją jako wartość typu int.Funkcja
             //sprawdza, czy użytkownik ma już utworzoną i wypełnioną tablicę. Jeśli nie, funkcja prosi go o utworzenie i wypełnienie
             //tablicy za pomocą funkcji UtworzTablice i WypelnijTablice.Funkcja wyświetla wartość sumy na ekranie.
+            Console.WriteLine("Podaj liczbe: ");
+            int n = int.Parse(Console.ReadLine());
+            int[,] T = new int[n, n];
+            Random r = new Random();
+            for (int i = 0; i < T.GetLength(0); i++)
+            {
+                for (int j = 0; j < T.GetLength(1); j++)
+                {
+                    T[i, j] = r.Next(1, 100);
+                    Console.Write(T[i, j] + " ");
+                }
+                Console.WriteLine();
+            }
+            bool pupa = false;
+            string x;
+            int[,] A = new int[0, 0];
+            while (pupa == false)
+            {
+                Console.Write("Wybierz funkcję statyczną:\r\n1.WczytajLiczbe\r\n2.UtworzTablice\r\n3.WypelnijTablice\r\n4.WyswietlTablice\r\n5.ObliczSume\r\nLub jesli chcesz wyjsc podaj q\n");
+                x = Console.ReadLine();
+                if (x == "1")
+                {
+                    Console.WriteLine(WczytajLiczbe());
+                }
+                else if (x == "2")
+                {
+                    A = UtwurzTablice();
+                }
+                else if (x == "3")
+                {
+                    WypelnijTablice(A);
+                }
+                else if (x == "4")
+                {
+                    WyswietlTablice(A);
+                }
+                else if (x == "5")
+                {
+                    Console.WriteLine(ObliczSume(A));
+                }
+                else if(x == "q")
+                {
+                    pupa = true;
+                }
+                else Console.WriteLine("Podano niepoprawne dane.");
+            }
+        }
+        static int WczytajLiczbe()
+        {
+            int x = 0;
+            string y;
+            bool f=false;
+            while (f == false)
+            {
+                Console.WriteLine("Podaj liczbe: ");
+                while(!int.TryParse(Console.ReadLine(), out x))
+                {
+                    y=x.ToString();
+                    Console.WriteLine("Podana wartosc jest niepoprawna.");
+                    if (y == "q") break;
+                }
+                if (x < 0) Console.WriteLine("Wprowadzono niepoprawna wartosc.");
+                else f = true;
+            }
+            return x;
+        }
+        static int[,] UtwurzTablice()
+        {
+            int a = WczytajLiczbe();
+            int b = WczytajLiczbe();
+            int[,] T = new int[a, b];
+            Console.WriteLine("Utworzono tablice.");
+            return T;
+        }
+        static int[,] WypelnijTablice(int[,] T)
+        {   
+            Console.WriteLine("Podaj dolna granice: ");
+            int a = int.Parse(Console.ReadLine());
+            Console.WriteLine("Podaj gorna granice: ");
+            int b=int.Parse(Console.ReadLine());
+            Random r = new Random();
+            for(int i = 0; i < T.GetLength(0); i++)
+            {
+                for(int j=0; j < T.GetLength(1); j++)
+                {
+                    T[i,j]=r.Next(a,b);
+                }
+            }
+            Console.WriteLine("Wypelniono tablice.");
+            return T;
+        }
+        static void WyswietlTablice(int[,] T)
+        {
+            for(int i=0; i < T.GetLength(0); i++)
+            {
+                for(int j=0;j< T.GetLength(1); j++)
+                {
+                    Console.Write(T[i, j] + " ");
+                }
+                Console.WriteLine();
+            }
+        }
+        static int ObliczSume(int[,] T)
+        {
+            int suma = 0;
+            for (int i = 0; i < T.GetLength(0); i++)
+            {
+                for (int j = 0; j < T.GetLength(1); j++)
+                {
+                    if (i == j)
+                    {
+                        suma = suma + T[i, j];
+                    }
+                }
+            }
+            Console.WriteLine("Suma elementow na diagonali wynosi:");
+            return suma;
         }
     }
 }
