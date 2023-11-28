@@ -51,21 +51,21 @@ namespace ConsoleApp2
             //    Console.WriteLine();
             //}
 
-            double[,,] cube1 = new double[,,] { { { 1.0, 2.0, 3.0 }, { 4.0, 5.0, 6.0 } },{ { 7.0, 8.0, 9.0 }, { 10.0, 11.0, 12.0 } } };
-            for(int i = 0; i < cube1.GetLength(0); i++)
-            {
-                Console.WriteLine($"cube1[{i}]");
-                for (int j=0;j< cube1.GetLength(1); j++)
-                {
-                    Console.WriteLine($"\tcube1[{i},{j}]");
-                    for (int k=0;k< cube1.GetLength(2); k++)
-                    {
-                        Console.Write($"\t\tcube1[{i},{j},{k}]={cube1[i, j, k]}  ");
-                    }
-                    Console.WriteLine();
-                }
-                Console.WriteLine();
-            }
+            //double[,,] cube1 = new double[,,] { { { 1.0, 2.0, 3.0 }, { 4.0, 5.0, 6.0 } }, { { 7.0, 8.0, 9.0 }, { 10.0, 11.0, 12.0 } } };
+            //for (int i = 0; i < cube1.GetLength(0); i++)
+            //{
+            //    Console.WriteLine($"cube1[{i}]");
+            //    for (int j = 0; j < cube1.GetLength(1); j++)
+            //    {
+            //        Console.WriteLine($"\tcube1[{i},{j}]");
+            //        for (int k = 0; k < cube1.GetLength(2); k++)
+            //        {
+            //            Console.Write($"\t\tcube1[{i},{j},{k}]={cube1[i, j, k]}  ");
+            //        }
+            //        Console.WriteLine();
+            //    }
+            //    Console.WriteLine();
+            //}
         }
     }
 }
