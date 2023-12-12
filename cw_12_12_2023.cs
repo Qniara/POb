@@ -35,16 +35,51 @@ namespace _12._12._23r
             //}
 
             //Utwórz słownik, który może przechowywać łańcuchy jako klucze i wartości
-            Dictionary<string, string> capital = new Dictionary<string, string>();
+            //Dictionary<string, string> capital = new Dictionary<string, string>();
             //Dodaj kilka par klucz-wartość do słownika za pomocą składni inicjalizatora kolekcji 
-            capital = new Dictionary<string, string>
-            {
-                {"Polska", "Warszawa"},
-                {"Polska", "Warszawa"},
-                {"Polska", "Warszawa"},
-                {"Włochy", "Rzym"},
-            };
+            //capital = new Dictionary<string, string>
+            //{
+            //    {"Polska", "Warszawa"},
+            //    {"Polska", "Warszawa"},
+            //    {"Polska", "Warszawa"},
+            //    {"Włochy", "Rzym"},
+            //};
 
+            //Słownik telefonów
+            //Dictionary<string, string>phones=new Dictionary<string, string>();
+            //phones.Add("+48 123 456 789", "Katarzyna");
+            //phones.Add("+48 123 444 789", "Tomasz");
+            //phones.Add("+48 123 581 789", "Anna");
+            //foreach(KeyValuePair<string, string> pair in phones)
+            //{
+            //    Console.WriteLine($"Nr tel: {pair.Key}\nOsoba: {pair.Value}\n\n");
+            //}
+            //Console.WriteLine();
+
+            //Zwierzęta
+            //Dictionary<string, string>animals=new Dictionary<string, string>();
+            //animals = new Dictionary<string, string>()
+            //{
+            //    { "kot", "pupa"},
+            //    {"koń", "dupa" }
+            //};
+            //foreach(var animal in animals)
+            //{
+            //    Console.WriteLine($"Zwierze: {animal.Key}\nOdglos: {animal.Value}\n\n");
+            //}
+
+            //Kolory
+            //Dictionary<string, string>colors= new Dictionary<string, string>();
+            //colors = new Dictionary<string, string>()
+            //{
+            //    {"czerwony","#FF0000" },
+            //    {"zielony","#00FF00" },
+            //    {"niebieski","#0000FF" }
+            //};
+            //foreach(var color in colors)
+            //{
+            //    Console.WriteLine($"Kolor: {color.Key}\nW RGB: {color.Value}\n");
+            //}
         }
     }
 }
