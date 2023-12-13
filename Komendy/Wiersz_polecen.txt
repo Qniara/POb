@@ -2,7 +2,7 @@ Sprawdzanie wersji dotneta w cmd - "dotnet --version"
 Sprawdzanie informacji na temat dotneta w cmd - "dotnet --info"
 Czyszczenie cmd - "cls"
 Katalog gł - "cd /"
-Zmiana katalogu lub wyświetlenie nazwy bieżącego katalogu - "cd :"
+Zmiana katalogu lub wyświetlenie nazwy bieżącego katalogu - "cd "
 Tworzenie jednego lub kilku katalogów podanych w parametrze - "mkdir"
 Otwieranie istniejącego katalogu - "cd 'nazwa katalogu'"
 Tworzenie nowego projektu, pliku konfiguracji lub rozwiązanie na podstawie określonego szablonu -
