@@ -33,17 +33,26 @@ namespace szyper_16_01_2024_2
             KurtCobain.Adress = new Adress();
             KurtCobain.Adress.City = "Seatlle";
             KurtCobain.Adress.Street = "Tahiti";
-            KurtCobain.Adress.HouseNumber = 261;
+            KurtCobain.Adress.HouseNumber = 226;
             KurtCobain.Adress.Street = "GoDamnPlan";
             Console.WriteLine(KurtCobain.Adress.GetAdress());
 
-            //KurtCobain.DateOfBirth = DateTime.Now; 
+            //KurtCobain.DateOfBirth = DateTime.Now;
             //Console.WriteLine(KurtCobain.DateOfBirth);//Aktualna godzina
 
             //KurtCobain.DateOfBirth = DateTime();
             //Console.WriteLine(KurtCobain.DateOfBirth); //01.01.0001 00:00
 
-            KurtCobain.DateOfBirth = DateTime(28,02,1967);
+            KurtCobain.DateOfBirth = new DateTime(1967, 02, 20, 12, 0, 0);
+            Console.WriteLine("Data urodzenia: "+ KurtCobain.DateOfBirth.ToLongDateString());
+
+            Console.Clear();
+            Person FreddieMercury = new Person();
+            FreddieMercury.Gender = Gender.male;
+            FreddieMercury.Permission = Permission.admin;
+            Console.WriteLine($"{FreddieMercury.Gender}\n{FreddieMercury.Permission}");
+            
+            Console.ReadKey();
         }
     }
 }
