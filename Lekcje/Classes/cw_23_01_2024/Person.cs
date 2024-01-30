@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,6 +6,18 @@ using System.Threading.Tasks;
 
 namespace szyper_16_01_2024_2.Classes
 {
+    enum Permission
+    {
+        admin = 1,
+        mod = 2,
+        user = 3,
+        Guest = 4
+    }
+    enum Gender
+    {
+        female,
+        male
+    }
     internal class Person
     {
         public string FirstName { get; private set; }
@@ -19,7 +31,8 @@ namespace szyper_16_01_2024_2.Classes
         public Adress City { get; set; }
         public Adress Street { get; set; }
         public DateTime DateOfBirth { get; set; }
-
+        public Gender Gender { get; set; }
+        public Permission Permission { get; set; }
         public void SetFirstName(string name)
         {
             FirstName = name;
