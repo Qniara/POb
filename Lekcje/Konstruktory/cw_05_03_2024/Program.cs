@@ -32,7 +32,6 @@ namespace cw_05_03_2024
             //Wyswietlanie menu
             ShowMainMenu(animals);
         }
-
         private static void ShowMainMenu(List<Animal> animals)
         {
             Console.Clear();
@@ -59,7 +58,7 @@ namespace cw_05_03_2024
                     RemoveAnimal(animals);
                     break;
                 case "5":
-                    Console.WriteLine("Dziekujemy za skorzystanie z programu.");
+                    Console.WriteLine("\nDziekujemy za skorzystanie z programu.\n");
                     break;
                 default:
                     Console.WriteLine("Niepoprawny klaiwsz.");
@@ -69,19 +68,102 @@ namespace cw_05_03_2024
         }
         private static void RemoveAnimal(List<Animal> animals)
         {
-            Console.WriteLine("Usuwanie zwierzecia.");
+            Console.Clear();
+            if (animals.Count == 0)
+            {
+                Console.WriteLine("Na liscie nie zadnego zwierzecia.");
+            }
+            else
+            {
+                Console.WriteLine("1. Usuń wszystkie zwierzeta");
+                Console.WriteLine("2. Usuń jedno zwierzę");
+                Console.Write("Wybierz jedna z opcji: ");
+                string choice = Console.ReadLine();
+                switch(choice)
+                {
+                    case "1":
+                        animals.Clear();
+                        if (animls.Count == 0)
+                        {
+                            Console.WriteLine("\nUsunieto wszystkie zwierzeta.\n");
+                        }
+                        break;
+                    case "2":
+                        ShowAnimalList(animals);
+                        Console.Write("Numer zwierzecia ktore chce usunac uzytkownik: ");
+                        int index = int.Parse(Console.ReadLine());
+                        if(index >=0 && index < animals.Count)
+                        {
+                            animals.RemoveAt(index);
+                            Console.WriteLine("Usunieto zwierze.");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Podano niepoprany numer");
+                        }
+                        break;
+                    default:
+                        Console.WriteLine("Niepoprawna opcja");
+                        RemoveAnimal(animals);
+                        break;
+                }
+            }
         }
 
         private static void ShowAnimalDeatails(List<Animal> animals)
         {
-            Console.WriteLine("Szegoly na temat zwierzecia.");
+            Console.Clear();
+            if (animals.Count == 0)
+            {
+                Console.WriteLine("Na liscie nie zadnego zwierzecia.");
+            }
+            else
+            {
+                for(int i = 0; i < animals.Count; i++)
+                {
+                    Console.WriteLine((i + 1) + ". " + animals[i].Name);
+                }
+                Console.WriteLine("\nPodaj numer zwierzecia ktorego szczegoly chcesz zobaczyc.");
+                int index = int.Parse(Console.ReadLine()) - 1;
+                if(index>=0 && index < animals.Count)
+                {
+                    Animal animal = animals[index];
+                    Console.WriteLine("Szczegolny na temat zwierzecia: ");
+                    Console.WriteLine(animal.Describe());
+                    animal.ShowAge();
+                    //Console.WriteLine("Imie: " + animal.Name);
+                    //Console.WriteLine("Data urodzenia: " + animal.BirthDate.ToShortDateString());
+                    //Console.WriteLine("Czy jest ssakiem: " + animal.IsMammal);
+                    //Console.WriteLine("Rodzaj: " + animal.Kind);
+                }
+                else
+                {
+                    Console.WriteLine("Niepoprawny numer, sproboj ponownie.");
+                }
+                Console.WriteLine("\nWcisnij dowolny klawisz aby wrocic do menu glownego.\n");
+                Console.ReadKey();
+                ShowMainMenu(animals);
+            }
         }
-
         private static void ShowAnimalList(List<Animal> animals)
         {
-            Console.WriteLine("Lista zwierzat.");
+            Console.Clear();
+            if (animals.Count == 0)
+            {
+                Console.WriteLine("Na liscie nie zadnego zwierzecia.");
+            }
+            else
+            {
+                Console.WriteLine("Lista zwierzat: ");
+                for(int i = 1; i <= animals.Count; i++)
+                {
+                    Console.WriteLine(i + ". " + animals[i-1].Name);
+                }
+            }
+            Console.WriteLine("Wcisnij dowolny klawisz aby wrocic do menu głównego.");
+            Console.ReadKey();
+            ShowMainMenu(animals);
         }
-
         private static void AddNewAnimal(List<Animal> animals)
         {
             Console.Clear();
