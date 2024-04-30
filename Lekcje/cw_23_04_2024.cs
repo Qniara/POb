@@ -106,6 +106,7 @@ namespace cw_23_04_2024
         public class ElectricCar : Car
         {
             public double BatteryCapacity { get; set; }
+            public double MaxBatteryCapacity { get; set; }
             public override void StartEngine()
             {
                 base.StartEngine();
@@ -117,6 +118,7 @@ namespace cw_23_04_2024
             public void ChargeBattery(double kwh)
             {
                 if (kwh <= 0) Console.WriteLine("\nNie mozna naladowac baterii ujemna wartoscia.");
+                else if (BatteryCapacity + kwh > MaxBatteryCapacity) Console.WriteLine($"Nie mozna naladowac baterii o {kwh} bo przekroczylo by to maksymalnapojemnosc akumulatora wynoszaca {MaxBatteryCapacity}");
                 else
                 {
                     Console.WriteLine($"Naladowano baterie o {kwh} kwh.");
