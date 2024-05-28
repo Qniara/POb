@@ -284,6 +284,17 @@ namespace _12_1_1_dziedziczenie
                     Console.WriteLine($"- {type}");
                 }
             }
+            internal void AddNewMachine()
+            {
+                typeManager.DisplayMachinesTypes();
+                Console.WriteLine("Wynierz typ maszyny do dodania: ");
+                string machineType = Console.ReadLine();
+                if (typeManager.IsValidType(machineType))
+                {
+                    Machine.newMachine = MachineFactory.CreateMachine(machineType);
+                    AddMachine(newMachine);
+                }
+            }
             public bool IsValidType(string type)
             {
                 return machineTypes.Contains(type);
@@ -292,37 +303,47 @@ namespace _12_1_1_dziedziczenie
 
         static void Main(string[] args)
         {
-          ElectricCar tesla = new ElectricCar
-          {
-            Brand = "Tesla",
-            Model = "S",
-            NumberOfDoors = 4,
-            FuelType = FuelType.Electric,
-            MaxGear = 1,
-            IsAutomatic = true,
-            BatteryCapacity = 95
-          };
+            MachineSimulator simulator = new MachineSimulator();
+            MachineTypeManager typeManager = new MachineTypeManager();
+            MenuManager menuManager = new MenuManager();
+            string userInput;
+            do
+            {
+                MenuManager.DisplayMenu();
+            } while (userInput != "9");
 
-          tesla.StartEngine();
-          tesla.ChargeBattery(10);
-          Console.WriteLine(tesla.BatteryCapacity);
-          Console.WriteLine();
+        //  ElectricCar tesla = new ElectricCar
+        //  {
+        //    Brand = "Tesla",
+        //    Model = "S",
+        //    NumberOfDoors = 4,
+        //    FuelType = FuelType.Electric,
+        //    MaxGear = 1,
+        //    IsAutomatic = true,
+        //    BatteryCapacity = 95
+        //  };
 
-          Truck volvo = new Truck
-          {
-            Brand = "Volvo",
-            Model = "FH",
-            Fuel = 300,
-            FuelType = FuelType.Diesel,
-            LoadCapacity = 25000
-          };
+        //  tesla.StartEngine();
+        //  tesla.ChargeBattery(10);
+        //  Console.WriteLine(tesla.BatteryCapacity);
+        //  Console.WriteLine();
 
-          volvo.LoadCargo(5000);
-          volvo.StartEngine();
-          volvo.UpdateSpeed(80);
-          volvo.StopEngine();
+        //  Truck volvo = new Truck
+        //  {
+        //    Brand = "Volvo",
+        //    Model = "FH",
+        //    Fuel = 300,
+        //    FuelType = FuelType.Diesel,
+        //    LoadCapacity = 25000
+        //  };
 
-          Console.ReadKey();
-        }
+        //  volvo.LoadCargo(5000);
+        //  volvo.StartEngine();
+        //  volvo.UpdateSpeed(80);
+        //  volvo.StopEngine();
+
+        //  Console.ReadKey();
+        //}
     }
 }
+
