@@ -2,25 +2,22 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
-using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
-using static _1_dziedziczenie.Program;
 
 namespace _1_dziedziczenie
 {
     internal class Program
     {
-        public class Shape
+        public abstract class Shape
         {
-            public virtual float CalculateArea()
-            {
-                return 0;
-            }
+            public abstract float CalculateArea();
 
-            public virtual float CalculatePerimeter()
+            public abstract float CalculatePerimeter();
+
+            internal void DisplayInfo()
             {
-                return 0;
+                Console.WriteLine("To jest kształt");
             }
         }
 
@@ -71,21 +68,29 @@ namespace _1_dziedziczenie
                 return (float)Math.Round((2 * Math.PI * radius), 2);
             }
         }
+
         public class Triangle : Shape
         {
-            public float sideA;
-            public float sideB;
-            public float sideC;
+            private float sideA;
+            private float sideB;
+            private float sideC;
+
             public Triangle(float sideA, float sideB, float sideC)
             {
-                this.sideA=sideA;
-                this.sideB=sideB;
-                this.sideC=sideC;
+                this.sideA = sideA;
+                this.sideB = sideB;
+                this.sideC = sideC;
             }
+
             public override float CalculateArea()
             {
                 float s = (sideA + sideB + sideC) / 2;
-                return s;
+                return (float)Math.Sqrt(s * (s - sideA) * (s - sideB) * (s - sideC));
+            }
+
+            public override float CalculatePerimeter()
+            {
+                return sideA + sideB + sideC;
             }
         }
         static void Main(string[] args)
@@ -124,18 +129,25 @@ namespace _1_dziedziczenie
                         float sideA, sideB, sideC;
                         do
                         {
-                            sideA = GetValidInput("Podaj dlugosc boku A: ");
-                            sideB = GetValidInput("Podaj dlugosc boku B: ");
-                            sideC = GetValidInput("Podaj dlugosc boku C: ");
-                            if(IsValidTriangle(sideA, sideB, sideC))
+                            sideA = GetValidInput("Podaj długość boku A:");
+                            sideB = GetValidInput("Podaj długość boku B:");
+                            sideC = GetValidInput("Podaj długość boku C:");
+
+                            if (!IsValidTriangle(sideA, sideB, sideC))
                             {
                                 Console.ForegroundColor = ConsoleColor.Red;
-                                Console.WriteLine("\nNieprawidlowe dane. Sproboj ponownie.\n");
+                                Console.WriteLine("\nNieprawidłowe dane. Spróbuj ponownie.\n");
                                 Console.ResetColor();
                             }
                         }
                         while (!IsValidTriangle(sideA, sideB, sideC));
+                        Triangle tri = new Triangle(sideA, sideB, sideC);
+                        Console.WriteLine("Powierzchnia trójkąta: {0}", tri.CalculateArea());
+                        Console.WriteLine("Obwód trójkąta: {0}", tri.CalculatePerimeter());
+                        tri.DisplayInfo();
                         break;
+                    case 6:
+                        return;
                     default:
                         Console.WriteLine("Nieprawidłowy wybór. Spróbuj ponownie.");
                         break;
@@ -146,7 +158,7 @@ namespace _1_dziedziczenie
 
         private static bool IsValidTriangle(float sideA, float sideB, float sideC)
         {
-            return (sideA + sideB > sideC) && (sideC + sideA > sideB) && (sideB + sideC > sideA);
+            return (sideA + sideB > sideC) && (sideB + sideC > sideA) && (sideA + sideC > sideB);
         }
 
         private static float GetValidInput(string prompt)
@@ -169,4 +181,3 @@ namespace _1_dziedziczenie
         }
     }
 }
-
